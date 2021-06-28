@@ -1,4 +1,4 @@
-#N struct 5624-cell float x float y float cellsize float color;
+#N struct 5835-cell float x float y float cellsize float color;
 #N canvas 481 196 677 517 10;
 #X declare -path else;
 #X obj 533 16 declare -path else;
@@ -656,8 +656,9 @@
 #X obj 21 23 inlet;
 #X obj 51 74 route algorithm feedback toOscs, f 73;
 #X msg 486 116 allOscs \$1 \$2;
-#X obj 486 135 s \$0-osc_msgs;
+#X obj 486 155 s \$0-osc_msgs;
 #X text 501 98 to note messages;
+#X text 374 120 messages to individual oscillators, f 11;
 #X connect 1 0 3 0;
 #X connect 2 0 1 0;
 #X connect 4 0 5 0;
@@ -682,5 +683,6 @@
 #X connect 32 0 33 0;
 #X connect 33 0 23 0;
 #X connect 33 1 21 0;
+#X connect 33 2 35 0;
 #X connect 33 3 34 0;
 #X connect 34 0 35 0;
