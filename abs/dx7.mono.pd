@@ -1,4 +1,4 @@
-#N struct 5835-cell float x float y float cellsize float color;
+#N struct 5548-cell float x float y float cellsize float color;
 #N canvas 481 196 677 517 10;
 #X declare -path else;
 #X obj 533 16 declare -path else;
@@ -477,30 +477,30 @@
 #X floatatom 196 117 5 0 0 1 feedback_(0-1) - -;
 #X obj 196 137 s \$0-feedback;
 #X floatatom 51 116 5 0 32 0 - - -;
-#N canvas 350 72 626 357 algorithms 0;
+#N canvas 350 72 626 357 algorithms 1;
 #X obj 71 17 inlet;
 #X floatatom 126 68 5 0 0 0 - - -;
-#N canvas 18 84 703 549 DX7-OscillatorsRoutings 0;
-#X obj 148 163 else/mtx.ctl 7 6 45 0 0 0 0 0 0 0 0 0 0 0 0;
-#X text 435 64 main-out, f 1;
-#X text 389 19 Oscillator -6, f 1;
-#X text 344 19 Oscillator -5, f 1;
-#X text 302 19 Oscillator -4, f 1;
-#X text 257 19 Oscillator -3, f 1;
-#X text 212 19 Oscillator -2, f 1;
-#X text 167 19 Oscillator -1, f 1;
-#X text 67 178 Oscillator 1;
-#X text 67 222 Oscillator 2;
-#X text 66 269 Oscillator 3;
-#X text 66 313 Oscillator 4;
-#X text 66 362 Oscillator 5;
-#X text 66 406 Oscillator 6;
-#X obj 158 452 print;
-#X msg 109 67 export;
-#X obj 281 498 text set \$0-routings;
-#X msg 74 121 clear;
-#X floatatom 418 467 5 0 0 0 - - -;
-#X obj 495 219 text define -k \$0-routings;
+#N canvas 60 76 703 549 DX7-OscillatorsRoutings 1;
+#X obj 148 183 else/mtx.ctl 7 6 45 0 0 0 0 0 0 0 0 0 0 0 0;
+#X text 435 84 main-out, f 1;
+#X text 389 39 Oscillator -6, f 1;
+#X text 344 39 Oscillator -5, f 1;
+#X text 302 39 Oscillator -4, f 1;
+#X text 257 39 Oscillator -3, f 1;
+#X text 212 39 Oscillator -2, f 1;
+#X text 167 39 Oscillator -1, f 1;
+#X text 67 198 Oscillator 1;
+#X text 67 242 Oscillator 2;
+#X text 66 289 Oscillator 3;
+#X text 66 333 Oscillator 4;
+#X text 66 382 Oscillator 5;
+#X text 66 426 Oscillator 6;
+#X obj 158 472 print;
+#X msg 109 87 export;
+#X obj 281 518 text set \$0-routings;
+#X msg 74 141 clear;
+#X floatatom 418 487 5 0 0 0 - - -;
+#X obj 495 239 text define -k \$0-routings;
 #A set 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0 0 0 0 0 0 0 0 0 \; 0 0 0 0 0 0 1 1 0 0 0 0 0 0 0 0 0 0 0 0
 1 0 0 1 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 1 0 \; 0 0 0 0 0 0 1 1 1 0
@@ -544,11 +544,15 @@
 0 0 0 0 0 1 \; 0 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 0 0
 0 1 0 0 0 0 0 0 1 0 0 0 0 1 1 0 \; 0 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0
 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 0 0 1 1 \;;
-#X obj 501 135 else/insert import 0;
-#X obj 513 87 text get \$0-routings;
-#X floatatom 501 43 5 0 0 0 - - -;
-#X msg 48 29 flush;
-#X msg 521 181 write -c ./DX7_programs.txt;
+#X obj 501 155 else/insert import 0;
+#X obj 513 107 text get \$0-routings;
+#X floatatom 501 63 5 0 0 0 - - -;
+#X msg 48 49 flush;
+#X msg 521 201 write -c ./DX7_programs.txt;
+#X text 18 8 USED TO BUILD THE DX7 PROGRAMS;
+#X text 502 254 |;
+#X text 502 264 |;
+#X text 505 270 ---> store all DX7 programs;
 #X connect 0 0 14 0;
 #X connect 15 0 0 0;
 #X connect 17 0 0 0;

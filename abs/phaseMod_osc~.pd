@@ -29,7 +29,7 @@ and vel) \; "ratio" - scaling of note frequency \; "level" - amplitude
 #X obj 146 217 f2s~ 45;
 #X obj 125 357 *~, f 9;
 #X obj 125 267 +~;
-#X obj 207 185 f2s~ 45 1;
+#X obj 216 255 f2s~ 45 1;
 #X obj 125 288 cos~;
 #X obj 146 238 phasor~;
 #X connect 1 0 23 0;
