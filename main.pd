@@ -1,8 +1,8 @@
-#N canvas 181 105 1007 580 10;
+#N canvas 67 105 1205 580 10;
 #X declare -path else;
 #X declare -path ./abs;
-#X obj 880 49 declare -path else;
-#X obj 874 30 declare -path ./abs;
+#X obj 1051 60 declare -path else;
+#X obj 1045 41 declare -path ./abs;
 #X obj 541 141 notein;
 #X obj 541 172 pack f f;
 #X obj 541 193 else/voices 16 -list;
@@ -146,10 +146,10 @@
 #X connect 16 0 12 0;
 #X restore 799 220 pd randomization;
 #X obj 892 239 s \$0-to_interface;
-#X obj 844 10 canvas.setname \$0-parent;
-#X obj 688 190 t b b, f 19;
-#X obj 688 233 s \$0-parent;
-#X msg 688 212 dirty 0;
+#X obj 1015 21 canvas.setname \$0-parent;
+#X obj 688 130 t b b, f 19;
+#X obj 688 173 s \$0-parent;
+#X msg 688 152 dirty 0;
 #X obj 246 541 s \$0-preset_params;
 #X obj 485 541 s \$0-preset_params;
 #N canvas 369 305 450 300 PRESETS 1;
@@ -165,7 +165,10 @@
 -empty- \; -empty- \; -empty- \; -empty- \; -empty- \; -empty- \; -empty-
 \; -empty- \; -empty- \; -empty- \; -empty- \; -empty- \; -empty- \;
 ;
-#X restore 923 80 pd PRESETS;
+#X restore 1094 91 pd PRESETS;
+#X text 742 152 <-- hack to avoid need to save patch every change;
+#X text 832 166 behavior introduced by experimental version of [presets]
+, f 36;
 #X connect 2 0 3 0;
 #X connect 2 1 3 1;
 #X connect 3 0 4 0;
