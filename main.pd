@@ -1,18 +1,18 @@
-#N canvas 67 105 1205 580 10;
+#N canvas 43 75 1205 580 10;
 #X declare -path else;
 #X declare -path ./abs;
 #X obj 1051 60 declare -path else;
 #X obj 1045 41 declare -path ./abs;
-#X obj 541 141 notein;
-#X obj 541 172 pack f f;
-#X obj 541 193 else/voices 16 -list;
-#X obj 541 405 clone dx7.mono 16;
-#X obj 541 456 out~;
-#X floatatom 845 280 5 0 1 1 feedback_(0-1) - -;
-#X floatatom 709 283 5 0 32 0 - - -;
-#X msg 709 303 all algorithm \$1;
-#X msg 845 300 all feedback \$1;
-#X obj 552 260 r \$0-dx7_interface;
+#X obj 676 163 notein;
+#X obj 676 194 pack f f;
+#X obj 676 215 else/voices 16 -list;
+#X obj 676 427 clone dx7.mono 16;
+#X obj 676 478 out~;
+#X floatatom 980 302 5 0 1 1 feedback_(0-1) - -;
+#X floatatom 844 305 5 0 32 0 - - -;
+#X msg 844 325 all algorithm \$1;
+#X msg 980 322 all feedback \$1;
+#X obj 687 282 r \$0-dx7_interface;
 #X obj 18 48 controls_oscillator 1;
 #X obj 257 48 controls_oscillator 2;
 #X obj 18 198 controls_oscillator 3;
@@ -23,7 +23,7 @@
 #X obj 257 506 s \$0-dx7_interface;
 #X obj 18 15 r \$0-to_interface;
 #X obj 257 15 r \$0-to_interface;
-#X obj 688 70 bng 25 250 50 0 empty empty randomize 28 7 0 12 -260097
+#X obj 823 108 bng 25 250 50 0 empty empty randomize 28 7 0 12 -260097
 -1 -1;
 #N canvas 270 270 850 300 randomization 0;
 #X obj 27 21 inlet;
@@ -114,7 +114,6 @@
 #X obj 230 119 chance 75;
 #X msg 230 140 0;
 #X obj 281 140 rand.f 0 1;
-#X obj 564 219 print;
 #X connect 0 0 1 0;
 #X connect 1 0 11 0;
 #X connect 1 1 14 0;
@@ -128,7 +127,6 @@
 #X connect 3 0 4 0;
 #X connect 3 1 4 1;
 #X connect 4 0 10 0;
-#X connect 4 0 17 0;
 #X connect 5 0 4 0;
 #X connect 5 1 4 1;
 #X connect 6 0 4 0;
@@ -144,31 +142,304 @@
 #X connect 14 1 16 0;
 #X connect 15 0 12 0;
 #X connect 16 0 12 0;
-#X restore 799 220 pd randomization;
-#X obj 892 239 s \$0-to_interface;
+#X restore 934 242 pd randomization;
+#X obj 1027 261 s \$0-to_interface;
 #X obj 1015 21 canvas.setname \$0-parent;
-#X obj 688 130 t b b, f 19;
-#X obj 688 173 s \$0-parent;
-#X msg 688 152 dirty 0;
-#X obj 246 541 s \$0-preset_params;
-#X obj 485 541 s \$0-preset_params;
-#N canvas 369 305 450 300 PRESETS 1;
-#X obj 59 68 presets;
-#A saved -empty- \; -empty- \; -empty- \; -empty- \; -empty- \; -empty-
-\; -empty- \; -empty- \; -empty- \; -empty- \; -empty- \; -empty- \;
+#X obj 823 152 t b b, f 19;
+#X obj 823 195 s \$0-parent;
+#X msg 823 174 dirty 0;
+#N canvas 546 110 525 518 PRESETS 1;
+#X obj 293 425 presets;
+#A saved 1348-ratio_preset 0.5 || 1348-level_preset 1 || 1348-envelope_preset
+5 250 50 1000 || 1321-ratio_preset 0.5 || 1321-level_preset 1 || 1321-envelope_preset
+5 250 50 1000 || 1294-ratio_preset 0.5 || 1294-level_preset 1 || 1294-envelope_preset
+5 250 50 1000 || 1267-ratio_preset 0.5 || 1267-level_preset 1 || 1267-envelope_preset
+5 250 50 1000 || 1240-ratio_preset 0.5 || 1240-level_preset 1 || 1240-envelope_preset
+5 250 50 1000 || 1213-ratio_preset 0.5 || 1213-level_preset 1 || 1213-envelope_preset
+5 250 50 1000 || \; 1348-ratio_preset 1 || 1348-level_preset 3.68292
+|| 1348-envelope_preset 5 1100.59 0 1238.2 || 1321-ratio_preset 0.954994
+|| 1321-level_preset 2.21887 || 1321-envelope_preset 5 2535.81 1 1591.43
+|| 1294-ratio_preset 1 || 1294-level_preset 1.60879 || 1294-envelope_preset
+5 1005.01 0 281.941 || 1267-ratio_preset 1 || 1267-level_preset 5.69116
+|| 1267-envelope_preset 5 1.83594e-06 1 1223.23 || 1240-ratio_preset
+0.0335167 || 1240-level_preset 1 || 1240-envelope_preset 5 2835.6 1
+1455.1 || 1213-ratio_preset 1 || 1213-level_preset 2.45946 || 1213-envelope_preset
+5 0.000141297 0 2290.16 || \; 1348-ratio_preset 0.5 || 1348-level_preset
+1 || 1348-envelope_preset 5 250 50 1000 || 1321-ratio_preset 0.5 ||
+1321-level_preset 1 || 1321-envelope_preset 5 250 50 1000 || 1294-ratio_preset
+0.5 || 1294-level_preset 1 || 1294-envelope_preset 5 250 50 1000 ||
+1267-ratio_preset 0.5 || 1267-level_preset 1 || 1267-envelope_preset
+5 250 50 1000 || 1240-ratio_preset 0.5 || 1240-level_preset 1 || 1240-envelope_preset
+5 250 50 1000 || 1213-ratio_preset 1 || 1213-level_preset 7.16848 ||
+1213-envelope_preset 5 405.277 0 421.194 || \; 1523-ratio_preset 1
+|| 1523-level_preset 7.14385 || 1523-envelope_preset 5 850.679 1 1416.34
+|| 1461-ratio_preset 1 || 1461-level_preset 5.71264 || 1461-envelope_preset
+5 0.595181 1 719.024 || 1399-ratio_preset 1 || 1399-level_preset 0.5
+|| 1399-envelope_preset 1523 410.965 1 2423.57 || 1337-ratio_preset
+1 || 1337-level_preset 1 || 1337-envelope_preset 5 40.2343 0 948.992
+|| 1275-ratio_preset 1 || 1275-level_preset 1 || 1275-envelope_preset
+5 1837.29 0 1183.34 || 1213-ratio_preset 1 || 1213-level_preset 7.08655
+|| 1213-envelope_preset 5 3.25048 1 147.142 || \; -empty- \; -empty-
+\; -empty- \; -empty- \; -empty- \; -empty- \; 1348-ratio_preset 0.5
+|| 1348-level_preset 1 || 1348-envelope_preset 5 250 50 1000 || 1321-ratio_preset
+0.5 || 1321-level_preset 1 || 1321-envelope_preset 5 250 50 1000 ||
+1294-ratio_preset 0.5 || 1294-level_preset 1 || 1294-envelope_preset
+5 250 50 1000 || 1267-ratio_preset 0.5 || 1267-level_preset 1 || 1267-envelope_preset
+5 250 50 1000 || 1240-ratio_preset 0.5 || 1240-level_preset 1 || 1240-envelope_preset
+5 250 50 1000 || 1213-ratio_preset 1 || 1213-level_preset 7.16848 ||
+1213-envelope_preset 5 405.277 0 421.194 || \; -empty- \; -empty- \;
+-empty- \; -empty- \; -empty- \; -empty- \; 1348-ratio_preset 0.5 ||
+1348-level_preset 1 || 1348-envelope_preset 5 250 50 1000 || 1321-ratio_preset
+0.5 || 1321-level_preset 1 || 1321-envelope_preset 5 250 50 1000 ||
+1294-ratio_preset 0.5 || 1294-level_preset 1 || 1294-envelope_preset
+5 250 50 1000 || 1267-ratio_preset 0.5 || 1267-level_preset 1 || 1267-envelope_preset
+5 250 50 1000 || 1240-ratio_preset 0.5 || 1240-level_preset 1 || 1240-envelope_preset
+5 250 50 1000 || 1213-ratio_preset 1 || 1213-level_preset 7.16848 ||
+1213-envelope_preset 5 405.277 0 421.194 || \; -empty- \; -empty- \;
 -empty- \; -empty- \; -empty- \; -empty- \; -empty- \; -empty- \; -empty-
 \; -empty- \; -empty- \; -empty- \; -empty- \; -empty- \; -empty- \;
 -empty- \; -empty- \; -empty- \; -empty- \; -empty- \; -empty- \; -empty-
 \; -empty- \; -empty- \; -empty- \; -empty- \; -empty- \; -empty- \;
 -empty- \; -empty- \; -empty- \; -empty- \; -empty- \; -empty- \; -empty-
 \; -empty- \; -empty- \; -empty- \; -empty- \; -empty- \; -empty- \;
--empty- \; -empty- \; -empty- \; -empty- \; -empty- \; -empty- \; -empty-
-\; -empty- \; -empty- \; -empty- \; -empty- \; -empty- \; -empty- \;
-;
-#X restore 1094 91 pd PRESETS;
-#X text 742 152 <-- hack to avoid need to save patch every change;
-#X text 832 166 behavior introduced by experimental version of [presets]
+-empty- \; -empty- \; -empty- \; -empty- \; -empty- \;;
+#X obj 256 102 r \$0-osc_preset_params;
+#X obj 256 84 s collect_presets_parameters;
+#X obj 285 133 break ||;
+#X obj 285 156 route ||;
+#X obj 285 177 route bang;
+#X obj 342 199 list split 1;
+#X obj 342 235 group 24;
+#X obj 342 299 list-remove;
+#X obj 342 256 t a b;
+#X msg 405 278 \\\;;
+#X obj 342 320 list prepend args;
+#X obj 342 341 list trim;
+#X msg 253 413 open;
+#X obj 342 362 t b a;
+#X obj 256 37 lb;
+#X obj 256 58 delay 20;
+#X obj 21 38 hradio 15 1 0 8 \$0-radio_0_out \$0-radio_0 empty 0 -8
+0 10 -174763 -1 -1 1;
+#N canvas 24 120 568 508 shift 0;
+#X msg 137 244 save;
+#X msg 293 229 load;
+#X obj 106 294 else/insert;
+#X obj 227 109 keyname;
+#X obj 266 131 select Shift_L;
+#X msg 266 153 1;
+#X msg 347 152 0;
+#X obj 251 180 &&;
+#X obj 275 202 sel 1 0;
+#X obj 106 374 outlet;
+#N canvas 82 213 554 495 load_preset_gui_control 0;
+#X obj 49 30 inlet;
+#N canvas 141 130 450 300 set_title 0;
+#X obj 91 33 inlet;
+#X obj 113 235 s \$0-canvas_preset_behavior;
+#X obj 135 101 t b b;
+#X msg 162 123 label load\ preset;
+#X msg 135 150 color #ffffff #000000 #000000;
+#X connect 0 0 2 0;
+#X connect 2 0 4 0;
+#X connect 2 1 3 0;
+#X connect 3 0 1 0;
+#X connect 4 0 1 0;
+#X restore 111 456 pd set_title;
+#X f 14;
+#N canvas 0 23 450 300 send_to_all 0;
+#X obj 105 72 inlet;
+#X obj 124 136 t a a a a, f 21;
+#X obj 124 218 s \$0-radio_3;
+#X obj 165 197 s \$0-radio_2;
+#X obj 206 177 s \$0-radio_1;
+#X obj 247 157 s \$0-radio_0;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 1 1 3 0;
+#X connect 1 2 4 0;
+#X connect 1 3 5 0;
+#X restore 128 424 pd send_to_all;
+#X obj 155 266 route 0 1 2 3;
+#X obj 394 317 s \$0-radio_3;
+#X obj 315 317 s \$0-radio_2;
+#X obj 236 317 s \$0-radio_1;
+#X obj 155 317 s \$0-radio_0;
+#X obj 155 217 f;
+#X obj 94 157 t b b b f;
+#X obj 155 245 list append color #aaaaaa #000000 #000000;
+#X msg 128 388 color #aaaaaa #aaaaaa #000000;
+#X obj 151 95 div 8;
+#X text 198 94 <-- line selected;
+#X obj 94 75 route load;
+#X obj 94 123 v \$0-line_selected;
+#X connect 0 0 14 0;
+#X connect 3 0 7 0;
+#X connect 3 1 6 0;
+#X connect 3 2 5 0;
+#X connect 3 3 4 0;
+#X connect 8 0 10 0;
+#X connect 9 0 8 0;
+#X connect 9 1 1 0;
+#X connect 9 2 11 0;
+#X connect 9 3 8 1;
+#X connect 10 0 3 0;
+#X connect 11 0 2 0;
+#X connect 12 0 15 0;
+#X connect 12 0 9 0;
+#X connect 14 0 15 0;
+#X connect 14 1 12 0;
+#X connect 15 0 9 0;
+#X restore 270 320 pd load_preset_gui_control;
+#N canvas 82 87 578 536 save_preset_gui_control 0;
+#X obj 45 21 inlet;
+#X obj 95 75 route save;
+#N canvas 0 23 450 300 set_title 0;
+#X obj 91 33 inlet;
+#X obj 113 235 s \$0-canvas_preset_behavior;
+#X msg 135 150 color #ffffff #000000 #ff5050;
+#X obj 135 101 t b b;
+#X msg 162 123 label save\ preset;
+#X connect 0 0 3 0;
+#X connect 2 0 1 0;
+#X connect 3 0 2 0;
+#X connect 3 1 4 0;
+#X connect 4 0 1 0;
+#X restore 112 456 pd set_title;
+#X f 14;
+#X obj 152 95 div 8;
+#X text 199 94 <-- line selected;
+#N canvas 0 23 450 300 send_to_all 0;
+#X obj 105 72 inlet;
+#X obj 124 136 t a a a a, f 21;
+#X obj 124 218 s \$0-radio_3;
+#X obj 165 197 s \$0-radio_2;
+#X obj 206 177 s \$0-radio_1;
+#X obj 247 157 s \$0-radio_0;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 1 1 3 0;
+#X connect 1 2 4 0;
+#X connect 1 3 5 0;
+#X restore 129 424 pd send_to_all;
+#X obj 156 266 route 0 1 2 3;
+#X obj 394 317 s \$0-radio_3;
+#X obj 315 317 s \$0-radio_2;
+#X obj 236 317 s \$0-radio_1;
+#X obj 156 317 s \$0-radio_0;
+#X msg 129 388 color #ff5050 #ff5050 #000000;
+#X obj 156 217 f;
+#X obj 156 245 list append color #ff5050 #000000 #000000;
+#X obj 95 157 t b b b f;
+#X obj 95 120 v \$0-line_selected;
+#X connect 0 0 1 0;
+#X connect 1 0 15 0;
+#X connect 1 1 3 0;
+#X connect 3 0 15 0;
+#X connect 3 0 14 0;
+#X connect 6 0 10 0;
+#X connect 6 1 9 0;
+#X connect 6 2 8 0;
+#X connect 6 3 7 0;
+#X connect 11 0 5 0;
+#X connect 12 0 13 0;
+#X connect 13 0 6 0;
+#X connect 14 0 12 0;
+#X connect 14 1 2 0;
+#X connect 14 2 11 0;
+#X connect 14 3 12 1;
+#X connect 15 0 14 0;
+#X restore 200 356 pd save_preset_gui_control;
+#N canvas 199 202 574 300 preset_selected 0;
+#X obj 247 266 outlet;
+#X obj 64 39 r \$0-radio_0_out;
+#X obj 179 39 r \$0-radio_1_out;
+#X obj 295 39 r \$0-radio_2_out;
+#X obj 410 39 r \$0-radio_3_out;
+#X obj 179 60 + 8;
+#X obj 295 60 + 16;
+#X obj 410 60 + 24;
+#X connect 1 0 0 0;
+#X connect 2 0 5 0;
+#X connect 3 0 6 0;
+#X connect 4 0 7 0;
+#X connect 5 0 0 0;
+#X connect 6 0 0 0;
+#X connect 7 0 0 0;
+#X restore 106 25 pd preset_selected;
+#X obj 106 56 t f f;
+#X obj 200 324 spigot;
+#X obj 270 290 spigot;
+#X obj 303 271 == 0;
+#X obj 233 299 == 1;
+#X connect 0 0 2 1;
+#X connect 0 0 11 0;
+#X connect 1 0 2 1;
+#X connect 1 0 10 0;
+#X connect 2 0 9 0;
+#X connect 3 0 7 0;
+#X connect 3 1 4 0;
+#X connect 4 0 5 0;
+#X connect 4 1 6 0;
+#X connect 5 0 7 1;
+#X connect 6 0 7 1;
+#X connect 7 0 8 0;
+#X connect 7 0 16 0;
+#X connect 7 0 17 0;
+#X connect 8 0 0 0;
+#X connect 8 1 1 0;
+#X connect 12 0 13 0;
+#X connect 13 0 2 0;
+#X connect 13 1 14 0;
+#X connect 13 1 15 0;
+#X connect 14 0 11 0;
+#X connect 15 0 10 0;
+#X connect 16 0 15 1;
+#X connect 17 0 14 1;
+#X restore 23 124 pd shift;
+#X obj 21 53 hradio 15 1 0 8 \$0-radio_1_out \$0-radio_1 empty 0 -8
+0 10 -174763 -174763 -1 5;
+#X obj 21 68 hradio 15 1 0 8 \$0-radio_2_out \$0-radio_2 empty 0 -8
+0 10 -174763 -174763 -1 4;
+#X obj 21 83 hradio 15 1 0 8 \$0-radio_3_out \$0-radio_3 empty 0 -8
+0 10 -174763 -174763 -1 6;
+#X obj 21 19 cnv 15 15 15 empty \$0-canvas_preset_behavior load\ preset
+0 8 0 12 -262144 -1 0;
+#X text 121 210 FALTA conseguir dar load nos presets, f 19;
+#X obj 109 161 display;
+#X obj 110 285 route load;
+#X floatatom 110 342 5 0 0 0 - - -;
+#X connect 1 0 3 0;
+#X connect 3 0 4 0;
+#X connect 4 0 5 0;
+#X connect 4 1 5 0;
+#X connect 5 1 6 0;
+#X connect 6 0 7 0;
+#X connect 7 0 9 0;
+#X connect 8 0 11 0;
+#X connect 9 0 8 0;
+#X connect 9 1 10 0;
+#X connect 10 0 8 1;
+#X connect 11 0 12 0;
+#X connect 12 0 14 0;
+#X connect 13 0 0 0;
+#X connect 14 0 0 0;
+#X connect 14 1 0 0;
+#X connect 15 0 16 0;
+#X connect 16 0 2 0;
+#X connect 18 0 0 0;
+#X connect 18 0 24 0;
+#X connect 24 0 25 0;
+#X connect 25 0 0 0;
+#X connect 25 0 26 0;
+#X coords 0 -1 1 1 145 100 2 10 10;
+#X restore 500 48 pd PRESETS;
+#X text 960 188 behavior introduced by experimental version of [presets]
 , f 36;
+#X text 877 174 <-- hack to avoid need to save patch every change.
+;
+#X obj 485 541 s \$0-osc_preset_params;
+#X obj 246 541 s \$0-osc_preset_params;
 #X connect 2 0 3 0;
 #X connect 2 1 3 1;
 #X connect 3 0 4 0;
@@ -180,17 +451,17 @@
 #X connect 10 0 5 0;
 #X connect 11 0 5 0;
 #X connect 12 0 18 0;
-#X connect 12 1 29 0;
+#X connect 12 1 33 0;
 #X connect 13 0 19 0;
-#X connect 13 1 30 0;
+#X connect 13 1 32 0;
 #X connect 14 0 18 0;
-#X connect 14 1 29 0;
+#X connect 14 1 33 0;
 #X connect 15 0 19 0;
-#X connect 15 1 30 0;
+#X connect 15 1 32 0;
 #X connect 16 0 18 0;
-#X connect 16 1 29 0;
+#X connect 16 1 33 0;
 #X connect 17 0 19 0;
-#X connect 17 1 30 0;
+#X connect 17 1 32 0;
 #X connect 20 0 12 0;
 #X connect 20 0 16 0;
 #X connect 20 0 14 0;
