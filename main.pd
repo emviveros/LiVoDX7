@@ -1,18 +1,18 @@
-#N canvas 43 75 1205 580 10;
+#N canvas 44 102 1205 580 10;
 #X declare -path else;
 #X declare -path ./abs;
 #X obj 1051 60 declare -path else;
 #X obj 1045 41 declare -path ./abs;
-#X obj 676 163 notein;
-#X obj 676 194 pack f f;
-#X obj 676 215 else/voices 16 -list;
+#X obj 527 186 notein;
+#X obj 527 217 pack f f;
+#X obj 527 238 else/voices 16 -list;
 #X obj 676 427 clone dx7.mono 16;
 #X obj 676 478 out~;
-#X floatatom 980 302 5 0 1 1 feedback_(0-1) - -;
-#X floatatom 844 305 5 0 32 0 - - -;
-#X msg 844 325 all algorithm \$1;
-#X msg 980 322 all feedback \$1;
-#X obj 687 282 r \$0-dx7_interface;
+#X floatatom 831 325 5 0 1 1 feedback_(0-1) - -;
+#X floatatom 695 328 5 0 32 0 - - -;
+#X msg 695 348 all algorithm \$1;
+#X msg 831 345 all feedback \$1;
+#X obj 538 305 r \$0-dx7_interface;
 #X obj 18 48 controls_oscillator 1;
 #X obj 257 48 controls_oscillator 2;
 #X obj 18 198 controls_oscillator 3;
@@ -23,7 +23,7 @@
 #X obj 257 506 s \$0-dx7_interface;
 #X obj 18 15 r \$0-to_interface;
 #X obj 257 15 r \$0-to_interface;
-#X obj 823 108 bng 25 250 50 0 empty empty randomize 28 7 0 12 -260097
+#X obj 674 81 bng 25 250 50 0 empty empty randomize 28 7 0 12 -260097
 -1 -1;
 #N canvas 270 270 850 300 randomization 0;
 #X obj 27 21 inlet;
@@ -142,97 +142,27 @@
 #X connect 14 1 16 0;
 #X connect 15 0 12 0;
 #X connect 16 0 12 0;
-#X restore 934 242 pd randomization;
-#X obj 1027 261 s \$0-to_interface;
+#X restore 785 265 pd randomization;
+#X obj 878 284 s \$0-to_interface;
 #X obj 1015 21 canvas.setname \$0-parent;
-#X obj 823 152 t b b, f 19;
-#X obj 823 195 s \$0-parent;
-#X msg 823 174 dirty 0;
-#N canvas 683 107 525 461 PRESETS 0;
-#X obj 247 410 presets;
-#A saved 1348-ratio_preset 0.5 || 1348-level_preset 1 || 1348-envelope_preset
-5 250 1 1000 || 1321-ratio_preset 0.5 || 1321-level_preset 1 || 1321-envelope_preset
-5 250 1 1000 || 1294-ratio_preset 0.5 || 1294-level_preset 1 || 1294-envelope_preset
-5 250 1 1000 || 1267-ratio_preset 0.5 || 1267-level_preset 1 || 1267-envelope_preset
-5 250 1 1000 || 1240-ratio_preset 0.5 || 1240-level_preset 1 || 1240-envelope_preset
-5 250 1 1000 || 1213-ratio_preset 0.5 || 1213-level_preset 1 || 1213-envelope_preset
-5 250 1 1000 || \; 7444-ratio_preset 1 || 7444-level_preset 1 || 7444-envelope_preset
-5 11.2082 1 993.746 || 7417-ratio_preset 1 || 7417-level_preset 6.22024
-|| 7417-envelope_preset 5 248.414 0 760.67 || 7390-ratio_preset 0.174975
-|| 7390-level_preset 6.26379 || 7390-envelope_preset 5 2041.79 1 1440.69
-|| 7363-ratio_preset 1 || 7363-level_preset 1.55901 || 7363-envelope_preset
-1243 133.635 1 2365.36 || 7336-ratio_preset 1 || 7336-level_preset
-1 || 7336-envelope_preset 5 3.82595 1 339.442 || 7309-ratio_preset
-0.379101 || 7309-level_preset 1 || 7309-envelope_preset 5 6.01233 0
-763.22 || \; 7444-ratio_preset 0.30276 || 7444-level_preset 4.50886
-|| 7444-envelope_preset 5 790.032 0 800.256 || 7417-ratio_preset 1
-|| 7417-level_preset 1 || 7417-envelope_preset 5 18.1105 0 273.552
-|| 7390-ratio_preset 1 || 7390-level_preset 0.5 || 7390-envelope_preset
-1033 1445.99 1 2415.71 || 7363-ratio_preset 0.526707 || 7363-level_preset
-6.64624 || 7363-envelope_preset 1107 8.14388 1 2345.85 || 7336-ratio_preset
-1 || 7336-level_preset 1 || 7336-envelope_preset 5 394.459 0 1045.45
-|| 7309-ratio_preset 1 || 7309-level_preset 1 || 7309-envelope_preset
-5 2014.09 1 2202.69 || \; 7444-ratio_preset 1 || 7444-level_preset
-2.75179 || 7444-envelope_preset 5 213.099 0 683.632 || 7417-ratio_preset
-1 || 7417-level_preset 2.22392 || 7417-envelope_preset 5 653.704 1
-2106.41 || 7390-ratio_preset 0.0418234 || 7390-level_preset 3.702 ||
-7390-envelope_preset 5 49.6535 0 426.2 || 7363-ratio_preset 0.511625
-|| 7363-level_preset 7.35802 || 7363-envelope_preset 5 7.41759 0 2063.07
-|| 7336-ratio_preset 0.841959 || 7336-level_preset 0.5 || 7336-envelope_preset
-70 2058.19 1 2619.54 || 7309-ratio_preset 0.048997 || 7309-level_preset
-1 || 7309-envelope_preset 5 12.0627 1 561.393 || \; -empty- \; -empty-
-\; -empty- \; -empty- \; -empty- \; -empty- \; 1348-ratio_preset 0.5
-|| 1348-level_preset 1 || 1348-envelope_preset 5 250 50 1000 || 1321-ratio_preset
-0.5 || 1321-level_preset 1 || 1321-envelope_preset 5 250 50 1000 ||
-1294-ratio_preset 0.5 || 1294-level_preset 1 || 1294-envelope_preset
-5 250 50 1000 || 1267-ratio_preset 0.5 || 1267-level_preset 1 || 1267-envelope_preset
-5 250 50 1000 || 1240-ratio_preset 0.5 || 1240-level_preset 1 || 1240-envelope_preset
-5 250 50 1000 || 1213-ratio_preset 1 || 1213-level_preset 7.16848 ||
-1213-envelope_preset 5 405.277 0 421.194 || \; -empty- \; -empty- \;
--empty- \; -empty- \; -empty- \; -empty- \; 1348-ratio_preset 0.5 ||
-1348-level_preset 1 || 1348-envelope_preset 5 250 50 1000 || 1321-ratio_preset
-0.5 || 1321-level_preset 1 || 1321-envelope_preset 5 250 50 1000 ||
-1294-ratio_preset 0.5 || 1294-level_preset 1 || 1294-envelope_preset
-5 250 50 1000 || 1267-ratio_preset 0.5 || 1267-level_preset 1 || 1267-envelope_preset
-5 250 50 1000 || 1240-ratio_preset 0.5 || 1240-level_preset 1 || 1240-envelope_preset
-5 250 50 1000 || 1213-ratio_preset 1 || 1213-level_preset 7.16848 ||
-1213-envelope_preset 5 405.277 0 421.194 || \; -empty- \; -empty- \;
--empty- \; -empty- \; -empty- \; -empty- \; -empty- \; -empty- \; -empty-
-\; -empty- \; -empty- \; -empty- \; -empty- \; -empty- \; -empty- \;
--empty- \; -empty- \; -empty- \; -empty- \; -empty- \; -empty- \; -empty-
-\; -empty- \; -empty- \; -empty- \; -empty- \; -empty- \; -empty- \;
--empty- \; -empty- \; -empty- \; -empty- \; -empty- \; -empty- \; -empty-
-\; -empty- \; -empty- \; -empty- \; -empty- \; -empty- \; -empty- \;
--empty- \; -empty- \; -empty- \; -empty- \; -empty- \;;
-#X obj 210 87 r \$0-osc_preset_params;
-#X obj 210 69 s collect_presets_parameters;
-#X obj 239 118 break ||;
-#X obj 239 141 route ||;
-#X obj 239 162 route bang;
-#X obj 296 184 list split 1;
-#X obj 296 220 group 24;
-#X obj 296 284 list-remove;
-#X obj 296 241 t a b;
-#X msg 359 263 \\\;;
-#X obj 296 305 list prepend args;
-#X obj 296 326 list trim;
-#X msg 215 349 open;
-#X obj 296 347 t b a;
-#X obj 210 22 lb;
-#X obj 210 43 delay 20;
+#X obj 674 175 t b b, f 19;
+#X obj 674 218 s \$0-parent;
+#X msg 674 197 dirty 0;
+#N canvas 305 153 525 461 PRESETS 0;
+#X msg 80 120 open;
 #X obj 21 38 hradio 15 1 0 8 \$0-radio_0_out \$0-radio_0 empty 0 -8
-0 10 -174763 -1 -1 1;
-#N canvas 24 120 568 508 shift 0;
-#X msg 137 244 save;
-#X msg 293 229 load;
-#X obj 106 294 else/insert;
-#X obj 227 109 keyname;
-#X obj 266 131 select Shift_L;
-#X msg 266 153 1;
-#X msg 347 152 0;
-#X obj 251 180 &&;
-#X obj 275 202 sel 1 0;
-#X obj 106 374 outlet;
+0 10 -174763 -1 -1 4;
+#N canvas 159 268 568 508 shift 0;
+#X msg 167 304 save;
+#X msg 323 209 load;
+#X obj 136 354 else/insert;
+#X obj 257 89 keyname;
+#X obj 296 111 select Shift_L;
+#X msg 296 133 1;
+#X msg 377 132 0;
+#X obj 281 160 &&;
+#X obj 305 182 sel 1 0;
+#X obj 126 454 outlet;
 #N canvas 82 213 554 495 load_preset_gui_control 0;
 #X obj 49 30 inlet;
 #N canvas 141 130 450 300 set_title 0;
@@ -291,7 +221,7 @@
 #X connect 14 0 15 0;
 #X connect 14 1 12 0;
 #X connect 15 0 9 0;
-#X restore 270 320 pd load_preset_gui_control;
+#X restore 300 320 pd load_preset_gui_control;
 #N canvas 82 87 578 536 save_preset_gui_control 0;
 #X obj 45 21 inlet;
 #X obj 95 75 route save;
@@ -350,7 +280,7 @@
 #X connect 14 2 11 0;
 #X connect 14 3 12 1;
 #X connect 15 0 14 0;
-#X restore 200 356 pd save_preset_gui_control;
+#X restore 230 416 pd save_preset_gui_control;
 #N canvas 199 202 574 300 preset_selected 0;
 #X obj 247 266 outlet;
 #X obj 64 39 r \$0-radio_0_out;
@@ -367,12 +297,12 @@
 #X connect 5 0 0 0;
 #X connect 6 0 0 0;
 #X connect 7 0 0 0;
-#X restore 106 25 pd preset_selected;
-#X obj 106 56 t f f;
-#X obj 200 324 spigot;
-#X obj 270 290 spigot;
-#X obj 303 271 == 0;
-#X obj 233 299 == 1;
+#X restore 96 45 pd preset_selected;
+#X obj 136 116 t f f;
+#X obj 230 384 spigot;
+#X obj 300 270 spigot;
+#X obj 333 251 == 0;
+#X obj 263 359 == 1;
 #X connect 0 0 2 1;
 #X connect 0 0 11 0;
 #X connect 1 0 2 1;
@@ -397,46 +327,381 @@
 #X connect 15 0 10 0;
 #X connect 16 0 15 1;
 #X connect 17 0 14 1;
-#X restore 23 124 pd shift;
+#X restore 12 115 pd shift;
 #X obj 21 53 hradio 15 1 0 8 \$0-radio_1_out \$0-radio_1 empty 0 -8
-0 10 -174763 -174763 -1 5;
+0 10 -174763 -174763 -1 0;
 #X obj 21 68 hradio 15 1 0 8 \$0-radio_2_out \$0-radio_2 empty 0 -8
-0 10 -174763 -174763 -1 4;
+0 10 -174763 -174763 -1 5;
 #X obj 21 83 hradio 15 1 0 8 \$0-radio_3_out \$0-radio_3 empty 0 -8
 0 10 -174763 -174763 -1 6;
 #X obj 21 19 cnv 15 15 15 empty \$0-canvas_preset_behavior load\ preset
 0 8 0 12 -262144 -1 0;
-#X connect 1 0 3 0;
-#X connect 3 0 4 0;
-#X connect 4 0 5 0;
-#X connect 4 1 5 0;
-#X connect 5 1 6 0;
-#X connect 6 0 7 0;
-#X connect 7 0 9 0;
-#X connect 8 0 11 0;
-#X connect 9 0 8 0;
-#X connect 9 1 10 0;
-#X connect 10 0 8 1;
+#X obj 184 33 r \$0-dx7_interface;
+#N canvas 565 160 659 300 presets_receive 0;
+#X obj 27 17 inlet;
+#X obj 59 71 route all;
+#X obj 59 92 route toOscs;
+#X obj 59 157 route 1 2 3 4 5 6, f 95;
+#N canvas 607 273 627 505 osc1_preset 0;
+#X obj 147 37 inlet;
+#X obj 193 133 route ratio level env;
+#X obj 44 241 r \$0-ratio_osc1;
+#X obj 370 242 r \$0-envelope_osc1;
+#X msg 85 319 1 ratio \$1;
+#X msg 236 322 1 level \$1;
+#X obj 252 443 s \$0-to_interface;
+#X obj 390 291 message;
+#X obj 204 241 r \$0-level_osc1;
+#X msg 390 371 1 env \$1 \$2 \$3 \$4;
+#X floatatom 236 283 5 0 0 0 - - -;
+#X floatatom 85 276 5 0 0 0 - - -;
+#X obj 85 296 change;
+#X obj 236 302 change;
+#X obj 390 312 unpack f f f f, f 30;
+#X obj 390 333 change;
+#X obj 449 333 change;
+#X obj 508 333 change;
+#X obj 559 333 change;
+#X obj 391 353 pack f f f f, f 29;
+#X connect 0 0 1 0;
+#X connect 1 0 11 0;
+#X connect 1 1 10 0;
+#X connect 1 2 7 0;
+#X connect 2 0 11 0;
+#X connect 3 0 7 0;
+#X connect 4 0 6 0;
+#X connect 5 0 6 0;
+#X connect 7 0 14 0;
+#X connect 8 0 10 0;
+#X connect 9 0 6 0;
+#X connect 10 0 13 0;
 #X connect 11 0 12 0;
-#X connect 12 0 14 0;
-#X connect 13 0 0 0;
-#X connect 14 0 0 0;
-#X connect 14 1 0 0;
-#X connect 15 0 16 0;
-#X connect 16 0 2 0;
-#X connect 18 0 0 0;
+#X connect 12 0 4 0;
+#X connect 13 0 5 0;
+#X connect 14 0 15 0;
+#X connect 14 1 16 0;
+#X connect 14 2 17 0;
+#X connect 14 3 18 0;
+#X connect 15 0 19 0;
+#X connect 16 0 19 1;
+#X connect 17 0 19 2;
+#X connect 18 0 19 3;
+#X connect 19 0 9 0;
+#X restore 49 201 pd osc1_preset;
+#N canvas 607 273 627 505 osc2_preset 0;
+#X obj 147 37 inlet;
+#X obj 193 133 route ratio level env;
+#X obj 252 443 s \$0-to_interface;
+#X obj 390 291 message;
+#X floatatom 236 283 5 0 0 0 - - -;
+#X floatatom 85 276 5 0 0 0 - - -;
+#X obj 85 296 change;
+#X obj 236 302 change;
+#X obj 390 312 unpack f f f f, f 30;
+#X obj 390 333 change;
+#X obj 449 333 change;
+#X obj 508 333 change;
+#X obj 559 333 change;
+#X obj 391 353 pack f f f f, f 29;
+#X obj 44 241 r \$0-ratio_osc2;
+#X obj 204 241 r \$0-level_osc2;
+#X obj 370 242 r \$0-envelope_osc2;
+#X msg 390 371 2 env \$1 \$2 \$3 \$4;
+#X msg 85 319 2 ratio \$1;
+#X msg 236 322 2 level \$1;
+#X connect 0 0 1 0;
+#X connect 1 0 5 0;
+#X connect 1 1 4 0;
+#X connect 1 2 3 0;
+#X connect 3 0 8 0;
+#X connect 4 0 7 0;
+#X connect 5 0 6 0;
+#X connect 6 0 18 0;
+#X connect 7 0 19 0;
+#X connect 8 0 9 0;
+#X connect 8 1 10 0;
+#X connect 8 2 11 0;
+#X connect 8 3 12 0;
+#X connect 9 0 13 0;
+#X connect 10 0 13 1;
+#X connect 11 0 13 2;
+#X connect 12 0 13 3;
+#X connect 13 0 17 0;
+#X connect 14 0 5 0;
+#X connect 15 0 4 0;
+#X connect 16 0 3 0;
+#X connect 17 0 2 0;
+#X connect 18 0 2 0;
+#X connect 19 0 2 0;
+#X restore 149 201 pd osc2_preset;
+#N canvas 607 273 627 505 osc3_preset 0;
+#X obj 147 37 inlet;
+#X obj 193 133 route ratio level env;
+#X obj 252 443 s \$0-to_interface;
+#X obj 390 291 message;
+#X floatatom 236 283 5 0 0 0 - - -;
+#X floatatom 85 276 5 0 0 0 - - -;
+#X obj 85 296 change;
+#X obj 236 302 change;
+#X obj 390 312 unpack f f f f, f 30;
+#X obj 390 333 change;
+#X obj 449 333 change;
+#X obj 508 333 change;
+#X obj 559 333 change;
+#X obj 391 353 pack f f f f, f 29;
+#X obj 44 241 r \$0-ratio_osc3;
+#X obj 204 241 r \$0-level_osc3;
+#X obj 370 242 r \$0-envelope_osc3;
+#X msg 390 371 3 env \$1 \$2 \$3 \$4;
+#X msg 85 319 3 ratio \$1;
+#X msg 236 322 3 level \$1;
+#X connect 0 0 1 0;
+#X connect 1 0 5 0;
+#X connect 1 1 4 0;
+#X connect 1 2 3 0;
+#X connect 3 0 8 0;
+#X connect 4 0 7 0;
+#X connect 5 0 6 0;
+#X connect 6 0 18 0;
+#X connect 7 0 19 0;
+#X connect 8 0 9 0;
+#X connect 8 1 10 0;
+#X connect 8 2 11 0;
+#X connect 8 3 12 0;
+#X connect 9 0 13 0;
+#X connect 10 0 13 1;
+#X connect 11 0 13 2;
+#X connect 12 0 13 3;
+#X connect 13 0 17 0;
+#X connect 14 0 5 0;
+#X connect 15 0 4 0;
+#X connect 16 0 3 0;
+#X connect 17 0 2 0;
+#X connect 18 0 2 0;
+#X connect 19 0 2 0;
+#X restore 249 201 pd osc3_preset;
+#N canvas 607 273 627 505 osc4_preset 0;
+#X obj 147 37 inlet;
+#X obj 193 133 route ratio level env;
+#X obj 252 443 s \$0-to_interface;
+#X obj 390 291 message;
+#X floatatom 236 283 5 0 0 0 - - -;
+#X floatatom 85 276 5 0 0 0 - - -;
+#X obj 85 296 change;
+#X obj 236 302 change;
+#X obj 390 312 unpack f f f f, f 30;
+#X obj 390 333 change;
+#X obj 449 333 change;
+#X obj 508 333 change;
+#X obj 559 333 change;
+#X obj 391 353 pack f f f f, f 29;
+#X obj 44 241 r \$0-ratio_osc4;
+#X obj 204 241 r \$0-level_osc4;
+#X obj 370 242 r \$0-envelope_osc4;
+#X msg 390 371 4 env \$1 \$2 \$3 \$4;
+#X msg 85 319 4 ratio \$1;
+#X msg 236 322 4 level \$1;
+#X connect 0 0 1 0;
+#X connect 1 0 5 0;
+#X connect 1 1 4 0;
+#X connect 1 2 3 0;
+#X connect 3 0 8 0;
+#X connect 4 0 7 0;
+#X connect 5 0 6 0;
+#X connect 6 0 18 0;
+#X connect 7 0 19 0;
+#X connect 8 0 9 0;
+#X connect 8 1 10 0;
+#X connect 8 2 11 0;
+#X connect 8 3 12 0;
+#X connect 9 0 13 0;
+#X connect 10 0 13 1;
+#X connect 11 0 13 2;
+#X connect 12 0 13 3;
+#X connect 13 0 17 0;
+#X connect 14 0 5 0;
+#X connect 15 0 4 0;
+#X connect 16 0 3 0;
+#X connect 17 0 2 0;
+#X connect 18 0 2 0;
+#X connect 19 0 2 0;
+#X restore 349 201 pd osc4_preset;
+#N canvas 607 273 627 505 osc5_preset 0;
+#X obj 147 37 inlet;
+#X obj 193 133 route ratio level env;
+#X obj 252 443 s \$0-to_interface;
+#X obj 390 291 message;
+#X floatatom 236 283 5 0 0 0 - - -;
+#X floatatom 85 276 5 0 0 0 - - -;
+#X obj 85 296 change;
+#X obj 236 302 change;
+#X obj 390 312 unpack f f f f, f 30;
+#X obj 390 333 change;
+#X obj 449 333 change;
+#X obj 508 333 change;
+#X obj 559 333 change;
+#X obj 391 353 pack f f f f, f 29;
+#X obj 44 241 r \$0-ratio_osc5;
+#X obj 204 241 r \$0-level_osc5;
+#X obj 370 242 r \$0-envelope_osc5;
+#X msg 390 371 5 env \$1 \$2 \$3 \$4;
+#X msg 85 319 5 ratio \$1;
+#X msg 236 322 5 level \$1;
+#X connect 0 0 1 0;
+#X connect 1 0 5 0;
+#X connect 1 1 4 0;
+#X connect 1 2 3 0;
+#X connect 3 0 8 0;
+#X connect 4 0 7 0;
+#X connect 5 0 6 0;
+#X connect 6 0 18 0;
+#X connect 7 0 19 0;
+#X connect 8 0 9 0;
+#X connect 8 1 10 0;
+#X connect 8 2 11 0;
+#X connect 8 3 12 0;
+#X connect 9 0 13 0;
+#X connect 10 0 13 1;
+#X connect 11 0 13 2;
+#X connect 12 0 13 3;
+#X connect 13 0 17 0;
+#X connect 14 0 5 0;
+#X connect 15 0 4 0;
+#X connect 16 0 3 0;
+#X connect 17 0 2 0;
+#X connect 18 0 2 0;
+#X connect 19 0 2 0;
+#X restore 449 201 pd osc5_preset;
+#N canvas 607 273 627 505 osc6_preset 0;
+#X obj 147 37 inlet;
+#X obj 193 133 route ratio level env;
+#X obj 252 443 s \$0-to_interface;
+#X obj 390 291 message;
+#X floatatom 236 283 5 0 0 0 - - -;
+#X floatatom 85 276 5 0 0 0 - - -;
+#X obj 85 296 change;
+#X obj 236 302 change;
+#X obj 390 312 unpack f f f f, f 30;
+#X obj 390 333 change;
+#X obj 449 333 change;
+#X obj 508 333 change;
+#X obj 559 333 change;
+#X obj 391 353 pack f f f f, f 29;
+#X obj 44 241 r \$0-ratio_osc6;
+#X obj 204 241 r \$0-level_osc6;
+#X obj 370 242 r \$0-envelope_osc6;
+#X msg 390 371 6 env \$1 \$2 \$3 \$4;
+#X msg 85 319 6 ratio \$1;
+#X msg 236 322 6 level \$1;
+#X connect 0 0 1 0;
+#X connect 1 0 5 0;
+#X connect 1 1 4 0;
+#X connect 1 2 3 0;
+#X connect 3 0 8 0;
+#X connect 4 0 7 0;
+#X connect 5 0 6 0;
+#X connect 6 0 18 0;
+#X connect 7 0 19 0;
+#X connect 8 0 9 0;
+#X connect 8 1 10 0;
+#X connect 8 2 11 0;
+#X connect 8 3 12 0;
+#X connect 9 0 13 0;
+#X connect 10 0 13 1;
+#X connect 11 0 13 2;
+#X connect 12 0 13 3;
+#X connect 13 0 17 0;
+#X connect 14 0 5 0;
+#X connect 15 0 4 0;
+#X connect 16 0 3 0;
+#X connect 17 0 2 0;
+#X connect 18 0 2 0;
+#X connect 19 0 2 0;
+#X restore 549 201 pd osc6_preset;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 2 0 3 0;
+#X connect 3 0 4 0;
+#X connect 3 1 5 0;
+#X connect 3 2 6 0;
+#X connect 3 3 7 0;
+#X connect 3 4 8 0;
+#X connect 3 5 9 0;
+#X restore 198 68 pd presets_receive;
+#X obj 80 224 presets \\\$0-ratio_osc1 \\\$0-level_osc1 \\\$0-envelope_osc1
+\\\$0-ratio_osc2 \\\$0-level_osc2 \\\$0-envelope_osc2 \\\$0-ratio_osc3
+\\\$0-level_osc3 \\\$0-envelope_osc3 \\\$0-ratio_osc4 \\\$0-level_osc4
+\\\$0-envelope_osc4 \\\$0-ratio_osc5 \\\$0-level_osc5 \\\$0-envelope_osc5
+\\\$0-ratio_osc6 \\\$0-level_osc6 \\\$0-envelope_osc6 \\\$0-algorithm
+\\\$0-feedback;
+#A saved \\\$0-ratio_osc1 1 || \\\$0-level_osc1 0.5 || \\\$0-envelope_osc1
+5 12.4762 1 1033.8 || \\\$0-ratio_osc2 1 || \\\$0-level_osc2 6.51993
+|| \\\$0-envelope_osc2 799 1164 1 2947.31 || \\\$0-ratio_osc3 1 ||
+\\\$0-level_osc3 1 || \\\$0-envelope_osc3 5 0.0799396 1 2092.26 ||
+\\\$0-ratio_osc4 0.226461 || \\\$0-level_osc4 1 || \\\$0-envelope_osc4
+588 2648.75 1 2462.59 || \\\$0-ratio_osc5 1 || \\\$0-level_osc5 5.11911
+|| \\\$0-envelope_osc5 5 676.03 1 1997.41 || \\\$0-ratio_osc6 0.267276
+|| \\\$0-level_osc6 0.5 || \\\$0-envelope_osc6 5 130.162 0 2003.38
+|| \\\$0-algorithm 14 || \\\$0-feedback 0 || \; \\\$0-ratio_osc1 0.452295
+|| \\\$0-level_osc1 0.5 || \\\$0-envelope_osc1 29 174.742 0 2624.41
+|| \\\$0-ratio_osc2 1 || \\\$0-level_osc2 1.10065 || \\\$0-envelope_osc2
+5 817.816 0 243.287 || \\\$0-ratio_osc3 1 || \\\$0-level_osc3 1 ||
+\\\$0-envelope_osc3 322 14.6519 0 2692.93 || \\\$0-ratio_osc4 1 ||
+\\\$0-level_osc4 5.65425 || \\\$0-envelope_osc4 5 1873.6 1 1452.98
+|| \\\$0-ratio_osc5 1 || \\\$0-level_osc5 5.22594 || \\\$0-envelope_osc5
+397.865 1127.47 0.157303 1662.3 || \\\$0-ratio_osc6 0.399364 || \\\$0-level_osc6
+5.37506 || \\\$0-envelope_osc6 1541 171.94 1 2591.22 || \\\$0-algorithm
+28 || \\\$0-feedback 0 || \; \\\$0-ratio_osc1 0.95143 || \\\$0-level_osc1
+4.93271 || \\\$0-envelope_osc1 1018 2172.65 0 2680.93 || \\\$0-ratio_osc2
+0.533805 || \\\$0-level_osc2 0.5 || \\\$0-envelope_osc2 1816 2475.94
+0 2805.53 || \\\$0-ratio_osc3 1 || \\\$0-level_osc3 0.5 || \\\$0-envelope_osc3
+5 220.579 0 898.381 || \\\$0-ratio_osc4 1 || \\\$0-level_osc4 0.5 ||
+\\\$0-envelope_osc4 1990 3.4557 1 2666.09 || \\\$0-ratio_osc5 0.157206
+|| \\\$0-level_osc5 5.43696 || \\\$0-envelope_osc5 5 385.467 1 1421.05
+|| \\\$0-ratio_osc6 0.945067 || \\\$0-level_osc6 4.79677 || \\\$0-envelope_osc6
+1831 407.558 1 2452.79 || \\\$0-algorithm 5 || \\\$0-feedback 0 ||
+\; \\\$0-ratio_osc1 0.19349 || \\\$0-level_osc1 7.17109 || \\\$0-envelope_osc1
+5 2575.33 0 368.922 || \\\$0-ratio_osc2 1 || \\\$0-level_osc2 2.92607
+|| \\\$0-envelope_osc2 5 979.572 1 1592 || \\\$0-ratio_osc3 0.168545
+|| \\\$0-level_osc3 1.08448 || \\\$0-envelope_osc3 5 520.109 0 1004.31
+|| \\\$0-ratio_osc4 1 || \\\$0-level_osc4 0.5 || \\\$0-envelope_osc4
+5 189.343 0 1067.07 || \\\$0-ratio_osc5 1 || \\\$0-level_osc5 1 ||
+\\\$0-envelope_osc5 5 0.206512 0 1662.3 || \\\$0-ratio_osc6 1 || \\\$0-level_osc6
+1 || \\\$0-envelope_osc6 5 134.539 1 1337.56 || \\\$0-algorithm 21
+|| \\\$0-feedback 0 || \; \\\$0-ratio_osc1 1 || \\\$0-level_osc1 0.5
+|| \\\$0-envelope_osc1 5 77.771 0 430.841 || \\\$0-ratio_osc2 1 ||
+\\\$0-level_osc2 7.10882 || \\\$0-envelope_osc2 1449 566.684 0 2652.5
+|| \\\$0-ratio_osc3 1 || \\\$0-level_osc3 5.0403 || \\\$0-envelope_osc3
+247 1275.21 1 2604.56 || \\\$0-ratio_osc4 1 || \\\$0-level_osc4 1 ||
+\\\$0-envelope_osc4 5 318.989 0 1618.71 || \\\$0-ratio_osc5 1 || \\\$0-level_osc5
+7.12588 || \\\$0-envelope_osc5 5 1434.13 1 972.263 || \\\$0-ratio_osc6
+0.451224 || \\\$0-level_osc6 6.41476 || \\\$0-envelope_osc6 5 10.4649
+1 117.735 || \\\$0-algorithm 16 || \\\$0-feedback 0 || \; -empty- \;
+-empty- \; -empty- \; -empty- \; -empty- \; -empty- \; -empty- \; -empty-
+\; -empty- \; -empty- \; -empty- \; -empty- \; -empty- \; -empty- \;
+-empty- \; -empty- \; -empty- \; -empty- \; -empty- \; -empty- \; -empty-
+\; -empty- \; -empty- \; -empty- \; -empty- \; -empty- \; -empty- \;
+-empty- \; -empty- \; -empty- \; -empty- \; -empty- \; -empty- \; -empty-
+\; -empty- \; -empty- \; -empty- \; -empty- \; -empty- \; -empty- \;
+-empty- \; -empty- \; -empty- \; -empty- \; -empty- \; -empty- \; -empty-
+\; -empty- \; -empty- \; -empty- \; -empty- \; -empty- \; -empty- \;
+-empty- \; -empty- \; -empty- \; -empty- \; -empty- \; -empty- \;;
+#X connect 0 0 9 0;
+#X connect 2 0 9 0;
+#X connect 7 0 8 0;
 #X coords 0 -1 1 1 145 100 2 10 10;
 #X restore 500 48 pd PRESETS;
-#X text 960 188 behavior introduced by experimental version of [presets]
+#X text 811 211 behavior introduced by experimental version of [presets]
 , f 36;
-#X text 877 174 <-- hack to avoid need to save patch every change.
+#X text 728 197 <-- hack to avoid need to save patch every change.
 ;
-#X obj 485 541 s \$0-osc_preset_params;
-#X obj 246 541 s \$0-osc_preset_params;
-#X text 678 30 A interface ainda não está bem resolvida. Ao enviar
-um preset o [pack2] do envelope não tem armazenados os valores dos
-novos parâmetros retornados pela linha de comunicação do [presets]
-, f 41;
+#X text 1040 512 Esteban Viveros 2021;
+#X obj 988 495 openfile https://github.com/emviveros/DX7_Pd_ELSE -h
+DX7_Pd_ELSE github repository;
+#X obj 695 298 r \$0-algorithm;
+#X obj 841 303 r \$0-feedback;
+#X text 681 28 Sounds don't the same every preset change;
+#X text 669 13 BUG;
 #X connect 2 0 3 0;
 #X connect 2 1 3 1;
 #X connect 3 0 4 0;
@@ -448,17 +713,11 @@ novos parâmetros retornados pela linha de comunicação do [presets]
 #X connect 10 0 5 0;
 #X connect 11 0 5 0;
 #X connect 12 0 18 0;
-#X connect 12 1 33 0;
 #X connect 13 0 19 0;
-#X connect 13 1 32 0;
 #X connect 14 0 18 0;
-#X connect 14 1 33 0;
 #X connect 15 0 19 0;
-#X connect 15 1 32 0;
 #X connect 16 0 18 0;
-#X connect 16 1 33 0;
 #X connect 17 0 19 0;
-#X connect 17 1 32 0;
 #X connect 20 0 12 0;
 #X connect 20 0 16 0;
 #X connect 20 0 14 0;
@@ -472,3 +731,5 @@ novos parâmetros retornados pela linha de comunicação do [presets]
 #X connect 26 0 28 0;
 #X connect 26 1 23 0;
 #X connect 28 0 27 0;
+#X connect 34 0 8 0;
+#X connect 35 0 7 0;

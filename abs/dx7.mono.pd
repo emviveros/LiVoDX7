@@ -1,4 +1,4 @@
-#N struct 5548-cell float x float y float cellsize float color;
+#N struct 8050-cell float x float y float cellsize float color;
 #N canvas 481 196 677 517 10;
 #X declare -path else;
 #X obj 533 16 declare -path else;
@@ -477,10 +477,10 @@
 #X floatatom 196 117 5 0 0 1 feedback_(0-1) - -;
 #X obj 196 137 s \$0-feedback;
 #X floatatom 51 116 5 0 32 0 - - -;
-#N canvas 350 72 626 357 algorithms 1;
+#N canvas 350 72 626 357 algorithms 0;
 #X obj 71 17 inlet;
 #X floatatom 126 68 5 0 0 0 - - -;
-#N canvas 60 76 703 549 DX7-OscillatorsRoutings 1;
+#N canvas 374 127 703 549 DX7-OscillatorsRoutings 0;
 #X obj 148 183 else/mtx.ctl 7 6 45 0 0 0 0 0 0 0 0 0 0 0 0;
 #X text 435 84 main-out, f 1;
 #X text 389 39 Oscillator -6, f 1;
@@ -548,11 +548,11 @@
 #X obj 513 107 text get \$0-routings;
 #X floatatom 501 63 5 0 0 0 - - -;
 #X msg 48 49 flush;
-#X msg 521 201 write -c ./DX7_programs.txt;
 #X text 18 8 USED TO BUILD THE DX7 PROGRAMS;
 #X text 502 254 |;
 #X text 502 264 |;
 #X text 505 270 ---> store all DX7 programs;
+#X msg 521 201 read -c ./DX7_programs.txt;
 #X connect 0 0 14 0;
 #X connect 15 0 0 0;
 #X connect 17 0 0 0;
@@ -561,9 +561,9 @@
 #X connect 21 0 20 0;
 #X connect 22 0 21 0;
 #X connect 23 0 0 0;
-#X connect 24 0 19 0;
+#X connect 28 0 19 0;
 #X restore 410 32 pd DX7-OscillatorsRoutings;
-#N canvas 0 23 541 491 DX7_programs_retrieve 0;
+#N canvas 512 124 541 491 DX7_programs_retrieve 0;
 #X obj 85 22 inlet;
 #X obj 131 71 text get \$0-routings;
 #X obj 131 92 else/group 7;
