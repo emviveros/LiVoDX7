@@ -8,11 +8,11 @@
 #X obj 527 238 else/voices 16 -list;
 #X obj 676 427 clone dx7.mono 16;
 #X obj 676 478 out~;
-#X floatatom 831 325 5 0 1 1 feedback_(0-1) - -;
-#X floatatom 695 328 5 0 32 0 - - -;
-#X msg 695 348 all algorithm \$1;
-#X msg 831 345 all feedback \$1;
-#X obj 538 305 r \$0-dx7_interface;
+#X floatatom 861 355 5 0 1 1 feedback_(0-1) - -;
+#X floatatom 695 338 5 0 32 0 - - -;
+#X msg 695 358 all algorithm \$1;
+#X msg 861 375 all feedback \$1;
+#X obj 589 276 r \$0-dx7_interface;
 #X obj 18 48 controls_oscillator 1;
 #X obj 257 48 controls_oscillator 2;
 #X obj 18 198 controls_oscillator 3;
@@ -143,7 +143,8 @@
 #X connect 15 0 12 0;
 #X connect 16 0 12 0;
 #X restore 785 265 pd randomization;
-#X obj 878 284 s \$0-to_interface;
+#X f 26;
+#X obj 938 294 s \$0-to_interface;
 #X obj 1015 21 canvas.setname \$0-parent;
 #X obj 674 175 t b b, f 19;
 #X obj 674 218 s \$0-parent;
@@ -698,10 +699,8 @@
 #X text 1040 512 Esteban Viveros 2021;
 #X obj 988 495 openfile https://github.com/emviveros/DX7_Pd_ELSE -h
 DX7_Pd_ELSE github repository;
-#X obj 695 298 r \$0-algorithm;
-#X obj 841 303 r \$0-feedback;
-#X text 681 28 Sounds don't the same every preset change;
-#X text 669 13 BUG;
+#X obj 695 308 r \$0-algorithm;
+#X obj 871 333 r \$0-feedback;
 #X connect 2 0 3 0;
 #X connect 2 1 3 1;
 #X connect 3 0 4 0;
