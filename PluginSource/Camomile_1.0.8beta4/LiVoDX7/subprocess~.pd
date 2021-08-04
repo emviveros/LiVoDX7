@@ -1,0 +1,33 @@
+#N canvas 44 -727 704 508 12;
+#X obj 257 319 dac~ 1;
+#X obj 26 16 r state;
+#X msg 58 68 pd~ stop;
+#X obj 26 39 sel 1;
+#X msg 26 91 pd~ start dx7.pd;
+#X obj 43 262 pd~ -ninsig 0 -noutsig 1 -pddir \$1 -scheddir \$1/extra/pd~
+, f 31;
+#X obj 220 194 list prepend dx7_engine;
+#X obj 220 218 list trim;
+#X obj 179 32 r dx7.engine;
+#X obj 227 111 r bang_to_randomization;
+#X obj 241 142 list prepend random;
+#X obj 43 376 route algorithm_randomization feedback_randomization
+to_interface_randomization, f 80;
+#X obj 43 413 s algorithm_randomization;
+#X obj 228 412 s feedback_randomization;
+#X obj 413 412 s to_interface_randomization;
+#X connect 1 0 3 0;
+#X connect 2 0 5 0;
+#X connect 3 0 4 0;
+#X connect 3 1 2 0;
+#X connect 4 0 5 0;
+#X connect 5 0 11 0;
+#X connect 5 1 0 0;
+#X connect 6 0 7 0;
+#X connect 7 0 5 0;
+#X connect 8 0 6 0;
+#X connect 9 0 10 0;
+#X connect 10 0 6 0;
+#X connect 11 0 12 0;
+#X connect 11 1 13 0;
+#X connect 11 2 14 0;

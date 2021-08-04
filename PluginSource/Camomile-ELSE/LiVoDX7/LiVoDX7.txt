@@ -1,0 +1,24 @@
+type instrument;
+code kbDX;
+compatibility 1.0.7;
+bus 0 2;
+midiin true;
+midiout false;
+playhead true;
+key true;
+
+param -name Tempo delay -label ms -min 0.1 -max 500;
+param -name Tempo decay -label ms -min 0.1 -max 50;
+param -name Delay MIX -label % -min 0 -max 100;
+
+param -name Frequency 1 -label Hz -min 0.5 -max 8000;
+param -name Balance -label % -min 0 -max 100;
+param -name Frequency 2 -label Hz -min 0.5 -max 8000;
+param -name Ring Modulator MIX -label % -min 0 -max 100;
+
+param -name decimation -label % -min 0.5 -max 100;
+param -name rounding -label % -min 0.5 -max 100;
+param -name Decimator MIX -label % -min 0 -max 100;
+
+manufacturer Esteban Viveros;
+description Infos.txt

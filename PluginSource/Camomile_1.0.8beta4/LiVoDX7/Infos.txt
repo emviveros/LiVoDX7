@@ -1,0 +1,4 @@
+Sintetizador baseado no DX7 como exercício da Oficina de Live Electronics com Alexandre Porres.
+Version: 0.1
+Author: Esteban Viveros
+2021-08-04

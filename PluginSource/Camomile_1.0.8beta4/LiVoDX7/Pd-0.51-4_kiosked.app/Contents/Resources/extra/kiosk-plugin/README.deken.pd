@@ -1,0 +1,13 @@
+#N canvas 815 540 497 372 12;
+#X text 56 58 kiosk-plugin: KIOSK-mode for Pd;
+#X text 44 245 you must restart Pd in order to make use of this plugin.
+;
+#X text 45 130 the kiosk-plugin allows you to get rid of some of Pd's
+IDE-characteristics \, to make it more usable in audience-facing applications.
+;
+#X text 44 186 by default \, the kiosk-plugin DOES NOT DO ANYTHING.
+;
+#X text 46 208 you MUST configure it first \, by editing the 'kiosk.cfg'
+file., f 61;
+#X text 160 346 happy patching. IOhannes m zmölnig/IEM. 2021;
+#X text 55 71 ================================;
